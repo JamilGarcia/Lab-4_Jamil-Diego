@@ -5,12 +5,15 @@
  */
 package lab.pkg4_jamil.diego;
 
+import java.util.Random;
+
 /**
  *
  * @author diego
  */
 public class Cazador extends Jugador{
-private int peso;
+Random random = new Random();
+    private int peso;
 private int musculatura;
 private int reflejos;
 
@@ -57,6 +60,16 @@ private int reflejos;
     }
       public int fuerza(){
     return (musculatura*2)-7;
+    }
+      public boolean trampa() {
+        boolean escoba = true;
+        int d = 1 + random.nextInt(100);
+        if (d <= 22) {
+            return escoba;
+        } else {
+            escoba = false;
+            return escoba;
+        }
     }
     
 }

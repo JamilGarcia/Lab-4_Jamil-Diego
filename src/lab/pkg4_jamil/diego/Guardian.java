@@ -5,12 +5,15 @@
  */
 package lab.pkg4_jamil.diego;
 
+import java.util.Random;
+
 /**
  *
  * @author diego
  */
 public class Guardian extends Jugador {
-private int reflejos;
+    Random random = new Random();
+    private int reflejos;
 
     public Guardian(int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
@@ -32,6 +35,16 @@ private int reflejos;
 
     public int agilidad(){
     return reflejos+7;
+    }
+        public boolean trampa() {
+        boolean barrera = true;
+        int d = 1 + random.nextInt(100);
+        if (d <= 22) {
+            return barrera;
+        } else {
+            barrera = false;
+            return barrera;
+        }
     }
     
 }

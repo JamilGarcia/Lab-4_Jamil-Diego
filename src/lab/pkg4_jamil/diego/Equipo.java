@@ -10,16 +10,20 @@ public class Equipo {
     private int agilidad;
     private int velocidad;
     private int fuerza;
+    private String capitan;
     private ArrayList<Jugador>jugadores=new ArrayList();
 
-    public Equipo(String casa, int perdidos, int ganados, int agilidad, int velocidad, int fuerza) {
+    public Equipo(String casa, int perdidos, int ganados, int agilidad, int velocidad, int fuerza, String capitan) {
         this.casa = casa;
         this.perdidos = perdidos;
         this.ganados = ganados;
         this.agilidad = agilidad;
         this.velocidad = velocidad;
         this.fuerza = fuerza;
+        this.capitan = capitan;
     }
+
+   
 
     public String getCasa() {
         return casa;

@@ -62,6 +62,10 @@ public class Jugador {
     public String toString() {
         return "Jugador{" + "nombre=" + nombre + ", a\u00f1o=" + año + ", casa=" + casa + ", num_uniforme=" + num_uniforme + '}';
     }
+    public boolean trampa(){
+    return true;
+    } 
+    
     public int velocidadinicial(){
     return 0;
     }
