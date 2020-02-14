@@ -13,10 +13,10 @@ public class Lab4_JamilDiego {
 
         char resp = 's';
 
-        ArrayList <Jugador> jug = new ArrayList();
-        ArrayList <Equipo> equip = new ArrayList();
-        
-        while (resp == 's'){
+        ArrayList<Jugador> jug = new ArrayList();
+        ArrayList<Equipo> equip = new ArrayList();
+
+        while (resp == 's') {
 
             System.out.println(""
                     + "________________________________ \n"
@@ -50,27 +50,26 @@ public class Lab4_JamilDiego {
 
                             System.out.println("Ingrese la casa del equipo: ");
                             String casa = jd.next();
-                            
+
                             System.out.println("Ingrese los partidos perdidos: ");
                             int parPer = jd.nextInt();
-                            
+
                             System.out.println("Ingrese los partidos ganados: ");
                             int parGan = jd.nextInt();
-                            
+
                             double agil = 0;
                             double Vel = 0;
                             double Fuer = 0;
-                            
+
                             Equipo eq = new Equipo(casa, parPer, parGan, agil, Vel, Fuer);
-                            
+
                             equip.add(new Equipo(casa, parPer, parGan, agil, Vel, Fuer));
-                            
-                            
+
                             break;
                         case 2: //Modificar Equipo
                             System.out.println("Ingrese el numero de equipo: ");
                             int setEquip = jd.nextInt();
-                            
+
                             System.out.println(""
                                     + "________________________\n"
                                     + "|       Modificar      |\n"
@@ -82,39 +81,35 @@ public class Lab4_JamilDiego {
                                     + "\n"
                                     + "Ingrese la opcon: ");
                             int opcion12 = jd.nextInt();
-                            
+
                             switch (opcion12) {
                                 case 1:
                                     System.out.println("Ingrese la casa: ");
                                     casa = jd.next();
-                                    
+
                                     ((Equipo) equip.get(setEquip)).setCasa(casa);
-                                    
+
                                     break;
                                 case 2:
                                     System.out.println("Ingrese los partidos perdidos: ");
                                     parPer = jd.nextInt();
-                                    
+
                                     ((Equipo) equip.get(setEquip)).setPerdidos(parPer);
-                                    
+
                                     break;
                                 case 3:
                                     System.out.println("Ingrese los partidos ganados: ");
                                     parGan = jd.nextInt();
-                                    
+
                                     ((Equipo) equip.get(setEquip)).setGanados(parGan);
-                                    
+
                                     break;
                                 default:
                                     System.out.println("Error!!! Opcion Incorrecta!!");
                             }
-                            
-                            
+
                             break;
                         case 3: //Listar Equipo
-                            
-                            
-                            
 
                             break;
                         default:
@@ -153,26 +148,51 @@ public class Lab4_JamilDiego {
 
                 case 3: //Simulacion
                     boolean fin = true;
-                    
+                    for (int i = 0; i < equip.size(); i++) {
+                        System.out.println(equip.get(i));
+                    }
+                    System.out.println("Con que equipo deseas jugar?");
+                    int e = jd.nextInt();
+                    System.out.println("Elige el equipo contrario:");
+                    int cont = jd.nextInt();
                     while (fin) {
+                        for (int i = 0; i < jug.size(); i++) {
+                            System.out.println(jug.get(i));
+                        }
                         System.out.println("Es tu turno jugador 1 con que jugador desea jugar:");
-                        System.out.println("1) Guardian");
-                        System.out.println("2) Buscador");
-                        System.out.println("3) Cazador");
-                        System.out.println("4) Golpeador");
                         int juga = jd.nextInt();
-                        switch (juga) {
+                        System.out.println("1) Guardian");
+                        System.out.println("2) Cazador");
+                        System.out.println("3) Buscador");
+                        System.out.println("4) Golpeador");
+                        switch(juga){
                             case 1:
+                                int ag=0;
+                                int vel=0;
+                                for (Jugador j : equip.get(e).getJugadores()) {
+                                    if(j instanceof Guardian){
+                                    ag=j.agilidad();
+                                    }
+                                }
+                                for (Jugador j : equip.get(cont).getJugadores()) {
+                                    if(j instanceof Cazador){
+                                    vel=j.velocidadinicial();
+                                    }
+                                }
+                                if(ag>vel){
+                                    for (Jugador j : equip.get(e).getJugadores()) {
+                                    if(j instanceof Guardian){
+                                    ((Guardian) j).setAgilidad(ag+8);
+                                    }
+                                }
+                                    System.out.println(equip);
+                                }
                                 
                                 break;
-                            case 2:
-                                break;
-                            case 3: 
-                                break;
-                            case 4:
-                                break;
+                             
                         }
                     }
+
                     break;
 
                 case 0: //Salida

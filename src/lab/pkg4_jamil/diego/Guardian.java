@@ -14,6 +14,7 @@ import java.util.Random;
 public class Guardian extends Jugador {
     Random random = new Random();
     private int reflejos;
+    private int agilidad;
 
     public Guardian(int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
@@ -28,13 +29,21 @@ public class Guardian extends Jugador {
         this.reflejos = reflejos;
     }
 
+    public int getAgilidad() {
+        return agilidad;
+    }
+
+    public void setAgilidad(int agilidad) {
+        this.agilidad = reflejos+7;
+    }
+
     @Override
     public String toString() {
         return "Guardian{" + "reflejos=" + reflejos + '}';
     }
 
     public int agilidad(){
-    return reflejos+7;
+    return agilidad;
     }
         public boolean trampa() {
         boolean barrera = true;
