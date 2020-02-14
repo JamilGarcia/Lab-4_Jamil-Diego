@@ -93,7 +93,11 @@ public class Equipo {
         return "Equipo: \n"+ 
                 "| Casa: " + casa + "\n" + 
                 "| Perdidos: " + perdidos + 
-                "| Ganados: " + ganados + "Agilidad=" + agilidad + ", velocidad=" + velocidad + ", fuerza=" + fuerza + ", jugadores=" + jugadores + '}';
+                "| Ganados: " + ganados + "\n" + 
+                "| Agilidad: " + agilidad + "\n" +
+                "| Velocidad:" + velocidad + "\n" + 
+                "| Fuerza: " + fuerza + "\n" +
+                "| Jugadores: " + jugadores + "\n";
     }
     
     
