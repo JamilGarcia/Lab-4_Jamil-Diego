@@ -7,12 +7,15 @@ public class Equipo {
     private String casa;
     private int perdidos;
     private int ganados;
-    private int agilidad;
-    private int velocidad;
-    private int fuerza;
+    private double agilidad;
+    private double velocidad;
+    private double fuerza;
     private ArrayList<Jugador>jugadores=new ArrayList();
 
-    public Equipo(String casa, int perdidos, int ganados, int agilidad, int velocidad, int fuerza) {
+    public Equipo() {
+    }
+
+    public Equipo(String casa, int perdidos, int ganados, double agilidad, double velocidad, double fuerza) {
         this.casa = casa;
         this.perdidos = perdidos;
         this.ganados = ganados;
@@ -45,7 +48,7 @@ public class Equipo {
         this.ganados = ganados;
     }
 
-    public int getAgilidad() {
+    public double getAgilidad() {
         return agilidad;
     }
 
@@ -55,7 +58,7 @@ public class Equipo {
        }
     }
 
-    public int getVelocidad() {
+    public double getVelocidad() {
         return velocidad;
     }
 
@@ -65,7 +68,7 @@ public class Equipo {
         }
     }
 
-    public int getFuerza() {
+    public double getFuerza() {
         return fuerza;
     }
 
@@ -85,7 +88,10 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "casa=" + casa + ", perdidos=" + perdidos + ", ganados=" + ganados + ", agilidad=" + agilidad + ", velocidad=" + velocidad + ", fuerza=" + fuerza + ", jugadores=" + jugadores + '}';
+        return "Equipo: \n"+ 
+                "| Casa: " + casa + "\n" + 
+                "| Perdidos: " + perdidos + 
+                "| Ganados: " + ganados + "Agilidad=" + agilidad + ", velocidad=" + velocidad + ", fuerza=" + fuerza + ", jugadores=" + jugadores + '}';
     }
     
     
