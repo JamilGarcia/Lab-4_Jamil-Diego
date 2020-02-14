@@ -15,6 +15,10 @@ public class Jugador {
     private String casa;
     private int num_uniforme;
 
+    public Jugador() {
+    }
+
+  
     public Jugador(String nombre, int año, String casa, int num_uniforme) {
         this.nombre = nombre;
         this.año = año;
@@ -58,5 +62,13 @@ public class Jugador {
     public String toString() {
         return "Jugador{" + "nombre=" + nombre + ", a\u00f1o=" + año + ", casa=" + casa + ", num_uniforme=" + num_uniforme + '}';
     }
-    
+    public int velocidadinicial(){
+    return 0;
+    }
+     public int agilidad(){
+    return 0;
+    }
+      public int fuerza(){
+    return 0;
+    }
 }

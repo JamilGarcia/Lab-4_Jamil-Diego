@@ -10,9 +10,28 @@ package lab.pkg4_jamil.diego;
  * @author diego
  */
 public class Guardian extends Jugador {
+private int reflejos;
 
-    public Guardian(String nombre, int año, String casa, int num_uniforme) {
+    public Guardian(int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
+        this.reflejos = reflejos;
+    }
+
+    public int getReflejos() {
+        return reflejos;
+    }
+
+    public void setReflejos(int reflejos) {
+        this.reflejos = reflejos;
+    }
+
+    @Override
+    public String toString() {
+        return "Guardian{" + "reflejos=" + reflejos + '}';
+    }
+
+    public int agilidad(){
+    return reflejos+7;
     }
     
 }
