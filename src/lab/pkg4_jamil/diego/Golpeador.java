@@ -81,7 +81,7 @@ public class Golpeador extends Jugador {
 
     @Override
     public String toString() {
-        return "Golpeador{" + "peso=" + peso + ", musculatura=" + musculatura + ", reflejos=" + reflejos + '}';
+        return super.toString() + "Golpeador{" + "peso=" + peso + ", musculatura=" + musculatura + ", reflejos=" + reflejos + '}';
     }
 
     public int velocidadinicial() {

@@ -16,11 +16,16 @@ public class Guardian extends Jugador {
     private int reflejos;
     private int agilidad;
 
+    public Guardian() {
+        super();
+    }
+
+    
     public Guardian(int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
         this.reflejos = reflejos;
     }
-
+    
     public int getReflejos() {
         return reflejos;
     }
@@ -39,7 +44,9 @@ public class Guardian extends Jugador {
 
     @Override
     public String toString() {
-        return "Guardian{" + "reflejos=" + reflejos + '}';
+        return super.toString() + "Guardian: \n" + 
+                "Reflejos: " + reflejos + "\n" +
+                "Agilidad: " + agilidad;
     }
 
     public int agilidad(){
