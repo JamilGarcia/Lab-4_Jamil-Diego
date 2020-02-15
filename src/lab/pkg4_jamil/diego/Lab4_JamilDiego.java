@@ -50,16 +50,16 @@ public class Lab4_JamilDiego {
 
                             System.out.println("Ingrese la casa del equipo: ");
                             String Casa = jd.next();
-                            
+
                             while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
-                                        //Try Catch
-                                        try {
-                                            validarCasa(Casa);
-                                        } catch (Exception1 e) {
-                                            System.out.println("Casa no valida");
-                                            Casa = jd.next();
-                                        }
-                                    }
+                                //Try Catch
+                                try {
+                                    validarCasa(Casa);
+                                } catch (Exception1 e) {
+                                    System.out.println("Casa no valida");
+                                    Casa = jd.next();
+                                }
+                            }
 
                             System.out.println("Ingrese los partidos perdidos: ");
                             int parPer = jd.nextInt();
@@ -109,7 +109,7 @@ public class Lab4_JamilDiego {
                                             Casa = jd.next();
                                         }
                                     }
-                                    
+
                                     ((Equipo) equip.get(setEquip)).setCasa(Casa);
 
                                     break;
@@ -628,29 +628,171 @@ public class Lab4_JamilDiego {
                                         }
                                         break;
                                 }
-                            case 5:
-                                fin=false;
+                                int juga2 = 1 + ran.nextInt(4);
+                                switch (juga2) {
+                                    case 1:
+                                        int a = 0;
+                                        int v = 0;
+                                        for (Jugador j : equip.get(cont).getJugadores()) {
+                                            if (j instanceof Guardian) {
+                                                a = j.agilidad();
+                                            }
+                                        }
+                                        for (Jugador j : equip.get(e).getJugadores()) {
+                                            if (j instanceof Cazador) {
+                                                v = j.velocidadinicial();
+                                            }
+                                        }
+                                        if (a > v) {
+                                            for (Jugador j : equip.get(e).getJugadores()) {
+                                                if (j instanceof Guardian) {
+                                                    ((Guardian) j).setAgilidad(a + 8);
+
+                                                    System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "salvo la pelota de entrar");
+                                                } else {
+                                                    System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "fallo al tratar de slavar la pelota");
+                                                }
+
+                                            }
+                                        }
+                                        break;
+
+                                    case 2:
+                                        int a2 = 0;
+                                        int v2 = 0;
+                                        int d = 0;
+                                        for (Jugador j : equip.get(cont).getJugadores()) {
+                                            if (j instanceof Cazador) {
+                                                a2 = j.agilidad();
+                                                v2 = j.velocidadinicial();
+                                            }
+                                        }
+                                        for (Jugador j : equip.get(e).getJugadores()) {
+                                            if (j instanceof Guardian) {
+                                                d = j.agilidad();
+                                            }
+                                        }
+                                        if (a2 + v2 >= d) {
+                                            for (Jugador j : equip.get(cont).getJugadores()) {
+                                                if (j instanceof Cazador) {
+                                                    ((Cazador) j).setVelocidad(v2 + 6);
+                                                    ((Cazador) j).setAgilida(a2 + 6);
+                                                    System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(e).getCasa() + "anoto un gol");
+                                                } else {
+                                                    System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(e).getCasa() + "fallo al intentar anotar un gol");
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    case 3:
+                                        int r = 1 + ran.nextInt(20);
+                                        int v3 = 0;
+                                        int v4 = 0;
+                                        int a3 = 0;
+                                        for (Jugador j : equip.get(cont).getJugadores()) {
+                                            if (j instanceof Buscador) {
+                                                v3 = (j.velocidadinicial() / 14) + 14;
+                                            }
+                                        }
+                                        for (Jugador j : equip.get(e).getJugadores()) {
+                                            if (j instanceof Buscador) {
+                                                v4 = j.velocidadinicial();
+                                            }
+                                        }
+                                        if (v3 > v4) {
+                                            for (Jugador j : equip.get(cont).getJugadores()) {
+                                                if (j instanceof Buscador) {
+                                                    ag3 = ((Buscador) j).getVelocidad();
+                                                    ((Buscador) j).setAgilida(ag3 + 1);
+                                                    System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "subio un punto en velocidad");
+                                                    if (r > 18) {
+                                                        System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "atrapo la snitch");
+                                                    }
+                                                } else {
+                                                    System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "no subio un punto a su velocidad");
+                                                }
+                                            }
+                                        }
+                                        if (r > 18) {
+                                            fin = false;
+                                        }
+                                        break;
+
+                                    case 4:
+                                        int f = 0;
+                                        int f2 = 0;
+                                        int n = 1 + ran.nextInt(2);
+                                        switch (n) {
+                                            case 1:
+                                                for (Jugador j : equip.get(cont).getJugadores()) {
+                                                    if (j instanceof Golpeador) {
+                                                        fuer = ((Golpeador) j).getFuerz();
+                                                    }
+                                                }
+                                                for (Jugador j : equip.get(e).getJugadores()) {
+                                                    if (j instanceof Golpeador) {
+                                                        fuer2 = ((Golpeador) j).getFuerz();
+                                                    }
+                                                }
+                                                if ((fuer * 2) + 1 > fuer2 + fuer2) {
+                                                    for (Jugador j : equip.get(cont).getJugadores()) {
+                                                        if (j instanceof Golpeador) {
+                                                            ((Golpeador) j).setFuerz(fuer + 10);
+                                                            System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "logro atacar");
+                                                        } else {
+                                                            System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro atacar");
+                                                        }
+                                                    }
+                                                }
+                                                break;
+                                            case 2:
+                                                int agi = 0;
+                                                int agi2 = 0;
+                                                for (Jugador j : equip.get(e).getJugadores()) {
+                                                    if (j instanceof Golpeador) {
+                                                        agi = ((Golpeador) j).getFuerz();
+                                                    }
+                                                }
+                                                for (Jugador j : equip.get(cont).getJugadores()) {
+                                                    if (j instanceof Golpeador) {
+                                                        agi2 = ((Golpeador) j).getFuerz();
+                                                    }
+                                                }
+                                                if ((agi / 2) + 7 > agi2) {
+                                                    for (Jugador j : equip.get(e).getJugadores()) {
+                                                        if (j instanceof Golpeador) {
+                                                            ((Golpeador) j).setAgilida(agi + 10);
+                                                        }
+                                                    }
+                                                    break;
+
+                                                }
+                                                break;
+                                        }
+                                    case 5:
+                                        fin = false;
+                                        break;
+
+                                }
+
                                 break;
+                            case 0: //Salida
+                                System.out.println("Gracias por utilizar el programa <3");
+                                System.exit(0);
+                                break;
+                            default: //Validacion
+                                System.out.println("Error!! Opcion Incorrecta!!!");
                         }
+
                     }
-
-                    break;
-                case 0: //Salida
-                    System.out.println("Gracias por utilizar el programa <3");
-                    System.exit(0);
-                    break;
-                default: //Validacion
-                    System.out.println("Error!! Opcion Incorrecta!!!");
             }
-
         }
-
     }
-    
-    public static void validarCasa(String Casa) throws Exception1{
-        if (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")){
+
+    public static void validarCasa(String Casa) throws Exception1 {
+        if (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
             throw new Exception1();
-            
+
         }
     }
 
