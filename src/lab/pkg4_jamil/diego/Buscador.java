@@ -17,12 +17,42 @@ public class Buscador extends Jugador {
     private int peso;
     private int musculatura;
     private int reflejos;
+    private int velocidad;
+    private int agilida;
+    private int fuerz;
 
     public Buscador(int peso, int musculatura, int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
         this.peso = peso;
         this.musculatura = musculatura;
         this.reflejos = reflejos;
+        fuerz = (this.musculatura * 2) - 7;
+        velocidad = (200 / this.peso) * 7;
+        agilida = this.reflejos + 7;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public int getAgilida() {
+        return agilida;
+    }
+
+    public void setAgilida(int agilida) {
+        this.agilida = agilida;
+    }
+
+    public int getFuerz() {
+        return fuerz;
+    }
+
+    public void setFuerz(int fuerz) {
+        this.fuerz = fuerz;
     }
 
     public int getPeso() {
@@ -55,26 +85,25 @@ public class Buscador extends Jugador {
     }
 
     public int velocidadinicial() {
-        return (200 / peso) * 7;
+        return velocidad;
     }
 
     public int agilidad() {
-        return reflejos + 7;
+        return agilida;
     }
 
     public int fuerza() {
-        return (musculatura * 2) - 7;
+        return fuerz;
     }
 
     public boolean trampa() {
         boolean snitch = true;
-        int d = 1 +random.nextInt(100);
-        if (d<=5) {
+        int d = 1 + random.nextInt(100);
+        if (d <= 5) {
             return snitch;
-        }
-        else{
-        snitch =false;
-        return snitch;
+        } else {
+            snitch = false;
+            return snitch;
         }
     }
 
