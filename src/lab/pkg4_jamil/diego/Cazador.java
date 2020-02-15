@@ -11,22 +11,28 @@ import java.util.Random;
  *
  * @author diego
  */
-public class Cazador extends Jugador{
-Random random = new Random();
+public class Cazador extends Jugador {
+
+    Random random = new Random();
     private int peso;
-private int musculatura;
-private int reflejos;
-private int velocidad;
-private int agilida;
-private int fuerz;
+    private int musculatura;
+    private int reflejos;
+    private int velocidad;
+    private int agilida;
+    private int fuerz;
+
+    public Cazador() {
+        super();
+    }
+
     public Cazador(int peso, int musculatura, int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
         this.peso = peso;
         this.musculatura = musculatura;
         this.reflejos = reflejos;
-        fuerz=(this.musculatura*2)-7;
-        velocidad=(200/this.peso)*7;
-        agilida=this.reflejos+7;
+        fuerz = (this.musculatura * 2) - 7;
+        velocidad = (200 / this.peso) * 7;
+        agilida = this.reflejos + 7;
     }
 
     public int getPeso() {
@@ -53,8 +59,6 @@ private int fuerz;
         this.reflejos = reflejos;
     }
 
-    
-
     public int getVelocidad() {
         return velocidad;
     }
@@ -71,8 +75,6 @@ private int fuerz;
         this.agilida = agilida;
     }
 
-    
-
     public int getFuerz() {
         return fuerz;
     }
@@ -83,18 +85,27 @@ private int fuerz;
 
     @Override
     public String toString() {
-        return "Cazador{" + "peso=" + peso + ", musculatura=" + musculatura + ", reflejos=" + reflejos + '}';
+        return super.toString() + "Cazador: \n" + 
+                "Peso: " + peso + "\n" + 
+                "Musculatura: " + musculatura + "\n" + 
+                "Reflejos: " + reflejos + "\n" +  
+                "VelocidadIncial: " + velocidadinicial() + "\n" +
+                "Agilidad: " + agilidad();
     }
-   public int velocidadinicial(){
-    return velocidad;
+
+    public int velocidadinicial() {
+        return velocidad;
     }
-     public int agilidad(){
-    return agilida;
+
+    public int agilidad() {
+        return agilida;
     }
-      public int fuerza(){
-    return fuerz;
+
+    public int fuerza() {
+        return fuerz;
     }
-      public boolean trampa() {
+
+    public boolean trampa() {
         boolean escoba = true;
         int d = 1 + random.nextInt(100);
         if (d <= 22) {
@@ -104,5 +115,5 @@ private int fuerz;
             return escoba;
         }
     }
-    
+
 }
