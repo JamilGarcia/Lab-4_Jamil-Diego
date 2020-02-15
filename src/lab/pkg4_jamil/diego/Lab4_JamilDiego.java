@@ -15,7 +15,29 @@ public class Lab4_JamilDiego {
 
         ArrayList<Jugador> jug = new ArrayList();
         ArrayList<Equipo> equip = new ArrayList();
-
+        
+        equip.add(new Equipo ("Gryffindor", 12, 16, 0, 0, 0));
+        jug.add(new Jugador ("Yuda", 5, "Gryffindor", 7));
+        jug.add(new Jugador ("Camilo", 4, "Gryffindor", 3));
+        jug.add(new Jugador ("Bendeck", 4, "Gryffindor", 2));
+        jug.add(new Jugador ("Vargas", 1, "Gryffindor", 11));
+        jug.add(new Jugador ("Sebas", 7, "Gryffindor", 19));
+        jug.add(new Jugador ("Paulina", 7, "Gryffindor", 93));
+        jug.add(new Jugador ("Diego", 5, "Gryffindor", 8));
+        ((Equipo) equip.get(0)).setJugadores(jug);
+        
+        equip.add(new Equipo ("Slytherin", 10, 20, 0, 0, 0));
+        jug.add(new Jugador ("Jamil", 5, "Slytherin", 4));
+        jug.add(new Jugador ("Marcela", 3, "Slytherin", 10));
+        jug.add(new Jugador ("Reyes", 3, "Slytherin", 9));
+        jug.add(new Jugador ("Fortin", 2, "Slytherin", 15));
+        jug.add(new Jugador ("James",6, "Slytherin", 16));
+        jug.add(new Jugador ("Gabriel",6, "Slytherin", 13));
+        jug.add(new Jugador ("Andrea",4, "Slytherin", 77));
+        ((Equipo) equip.get(1)).setJugadores(jug);
+        
+                
+        
         while (resp == 's') {
 
             System.out.println(""
@@ -792,7 +814,7 @@ public class Lab4_JamilDiego {
     public static void validarCasa(String Casa) throws Exception1 {
         if (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
             throw new Exception1();
-
+            
         }
     }
 
