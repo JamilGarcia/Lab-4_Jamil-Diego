@@ -21,6 +21,12 @@ public class Buscador extends Jugador {
     private int agilida;
     private int fuerz;
 
+    public Buscador() {
+        super();
+    }
+    
+    
+
     public Buscador(int peso, int musculatura, int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
         this.peso = peso;
@@ -81,7 +87,12 @@ public class Buscador extends Jugador {
 
     @Override
     public String toString() {
-        return "Buscador{" + "peso=" + peso + ", musculatura=" + musculatura + ", reflejos=" + reflejos + '}';
+        return super.toString() + "Buscador: \n" + 
+                "Peso: " + peso + "\n" +  
+                "Musculatura: " + musculatura + "\n" +
+                "Reflejos: " + reflejos + "\n"+
+                "VelocidadIncial:" + velocidad + "\n" +
+                "Agilidad: " + agilida;
     }
 
     public int velocidadinicial() {

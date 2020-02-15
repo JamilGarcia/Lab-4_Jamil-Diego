@@ -21,6 +21,10 @@ public class Golpeador extends Jugador {
     private int agilida;
     private int fuerz;
 
+    public Golpeador() {
+        super();
+    }
+
     public Golpeador(int peso, int musculatura, int reflejos, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
         this.peso = peso;
@@ -81,7 +85,13 @@ public class Golpeador extends Jugador {
 
     @Override
     public String toString() {
-        return super.toString() + "Golpeador{" + "peso=" + peso + ", musculatura=" + musculatura + ", reflejos=" + reflejos + '}';
+        return super.toString() + "Golpeador: \n" + 
+                "Peso: " + peso + "\n" +
+                "Musculatura: " + musculatura + "\n" +
+                "Reflejos: " + reflejos + "\n" +
+                "VelocidadInicial: " + velocidad + "\n" +
+                "Agilidad: " + agilida + "\n" +
+                "Fuerza: " + fuerz;
     }
 
     public int velocidadinicial() {

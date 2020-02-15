@@ -90,7 +90,8 @@ public class Cazador extends Jugador {
                 "Musculatura: " + musculatura + "\n" + 
                 "Reflejos: " + reflejos + "\n" +  
                 "VelocidadIncial: " + velocidadinicial() + "\n" +
-                "Agilidad: " + agilidad();
+                "Agilidad: " + agilidad() + "\n" +
+                "Fuerza: " + fuerza();
     }
 
     public int velocidadinicial() {

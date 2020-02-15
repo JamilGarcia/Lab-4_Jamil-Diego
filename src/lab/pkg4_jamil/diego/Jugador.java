@@ -5,20 +5,26 @@
  */
 package lab.pkg4_jamil.diego;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author diego
  */
 public class Jugador {
+    
     private String nombre;
     private int año;
     private String casa;
     private int num_uniforme;
+    private ArrayList <Guardian> guar = new ArrayList();
+    private ArrayList <Golpeador> golp = new ArrayList();
+    private ArrayList <Cazador> caza = new ArrayList();
+    private ArrayList <Buscador> busc = new ArrayList();
 
     public Jugador() {
     }
 
-  
     public Jugador(String nombre, int año, String casa, int num_uniforme) {
         this.nombre = nombre;
         this.año = año;
@@ -58,14 +64,47 @@ public class Jugador {
         this.num_uniforme = num_uniforme;
     }
 
+    public ArrayList<Guardian> getGuar() {
+        return guar;
+    }
+
+    public void setGuar(ArrayList<Guardian> guar) {
+        this.guar = guar;
+    }
+
+    public ArrayList<Golpeador> getGolp() {
+        return golp;
+    }
+
+    public void setGolp(ArrayList<Golpeador> golp) {
+        this.golp = golp;
+    }
+
+    public ArrayList<Cazador> getCaza() {
+        return caza;
+    }
+
+    public void setCaza(ArrayList<Cazador> caza) {
+        this.caza = caza;
+    }
+
+    public ArrayList<Buscador> getBusc() {
+        return busc;
+    }
+
+    public void setBusc(ArrayList<Buscador> busc) {
+        this.busc = busc;
+    }
+
     @Override
     public String toString() {
-        return  "Jugador: \n" + 
-                "Nombre: " + nombre + "\n" + 
-                "A\u00f1o: " + año + "\n" +
-                "Casa: " + casa + "\n" +
-                "Num_uniforme: " + num_uniforme;
+        return "Jugador{" + "nombre=" + nombre + ", a\u00f1o=" + año + ", casa=" + casa + ", num_uniforme=" + num_uniforme + ", guar=" + guar + ", golp=" + golp + ", caza=" + caza + ", busc=" + busc + '}';
     }
+    
+    
+    
+
+    
     public boolean trampa(){
     return true;
     } 

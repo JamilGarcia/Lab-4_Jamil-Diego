@@ -10,7 +10,7 @@ public class Equipo {
     private double agilidad;
     private double velocidad;
     private double fuerza;
-    private ArrayList<Jugador>jugadores=new ArrayList();
+    private ArrayList <Jugador> jugadores=new ArrayList();
 
     public Equipo() {
     }
@@ -84,7 +84,7 @@ public class Equipo {
         return jugadores;
     }
 
-    public void setJugadores(ArrayList<Jugador> jugadores) {
+    public void setJugadores(ArrayList jugadores) {
         this.jugadores = jugadores;
     }
 
