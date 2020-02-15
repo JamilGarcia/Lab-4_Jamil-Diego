@@ -466,14 +466,26 @@ public class Lab4_JamilDiego {
                     break;
 
                 case 3: //Simulacion
+                   
                     boolean fin = true;
                     for (int i = 0; i < equip.size(); i++) {
                         System.out.println(equip.get(i));
                     }
+                    
                     System.out.println("Con que equipo deseas jugar?");
                     int e = jd.nextInt();
                     System.out.println("Elige el equipo contrario:");
                     int cont = jd.nextInt();
+                     try {
+                        validarequipo(equip.get(e).getJugadores());
+                    } catch (Excpet2 ep) {
+                         System.out.println("Equipo no completo jugador 1");
+                    }
+                      try {
+                        validarequipo(equip.get(cont).getJugadores());
+                    } catch (Excpet2 ep) {
+                         System.out.println("Equipo no completo en la maquina");
+                    }
                     while (fin) {
                         for (int i = 0; i < jug.size(); i++) {
                             System.out.println(jug.get(i));
@@ -726,18 +738,18 @@ public class Lab4_JamilDiego {
                                             case 1:
                                                 for (Jugador j : equip.get(cont).getJugadores()) {
                                                     if (j instanceof Golpeador) {
-                                                        fuer = ((Golpeador) j).getFuerz();
+                                                        f = ((Golpeador) j).getFuerz();
                                                     }
                                                 }
                                                 for (Jugador j : equip.get(e).getJugadores()) {
                                                     if (j instanceof Golpeador) {
-                                                        fuer2 = ((Golpeador) j).getFuerz();
+                                                        f2 = ((Golpeador) j).getFuerz();
                                                     }
                                                 }
                                                 if ((fuer * 2) + 1 > fuer2 + fuer2) {
                                                     for (Jugador j : equip.get(cont).getJugadores()) {
                                                         if (j instanceof Golpeador) {
-                                                            ((Golpeador) j).setFuerz(fuer + 10);
+                                                            ((Golpeador) j).setFuerz(f + 10);
                                                             System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "logro atacar");
                                                         } else {
                                                             System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro atacar");
@@ -748,18 +760,18 @@ public class Lab4_JamilDiego {
                                             case 2:
                                                 int agi = 0;
                                                 int agi2 = 0;
-                                                for (Jugador j : equip.get(e).getJugadores()) {
+                                                for (Jugador j : equip.get(cont).getJugadores()) {
                                                     if (j instanceof Golpeador) {
                                                         agi = ((Golpeador) j).getFuerz();
                                                     }
                                                 }
-                                                for (Jugador j : equip.get(cont).getJugadores()) {
+                                                for (Jugador j : equip.get(e).getJugadores()) {
                                                     if (j instanceof Golpeador) {
                                                         agi2 = ((Golpeador) j).getFuerz();
                                                     }
                                                 }
                                                 if ((agi / 2) + 7 > agi2) {
-                                                    for (Jugador j : equip.get(e).getJugadores()) {
+                                                    for (Jugador j : equip.get(cont).getJugadores()) {
                                                         if (j instanceof Golpeador) {
                                                             ((Golpeador) j).setAgilida(agi + 10);
                                                         }
@@ -795,5 +807,10 @@ public class Lab4_JamilDiego {
 
         }
     }
+    public static void validarequipo(ArrayList e) throws Excpet2{
+    if(e.size()>=8){
+       throw new Excpet2(); 
+       }
+        }
 
 }
