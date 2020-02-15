@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Lab4_JamilDiego {
-
+    
     static Scanner jd = new Scanner(System.in);
     static Random ran = new Random();
 
@@ -228,7 +228,7 @@ public class Lab4_JamilDiego {
                                     System.out.println("Reflejos: ");
                                     int reflex = jd.nextInt();
 
-                                    jug.add(new Guardian(reflex, nom, anios, Casa, n_uniforme));
+                                    jug.add(new Guardian(reflex, 0, nom, anios, Casa, n_uniforme));
                                     ((Equipo) equip.get(c)).setJugadores(jug);
                                     break;
 

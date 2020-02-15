@@ -20,10 +20,10 @@ public class Guardian extends Jugador {
         super();
     }
 
-    
-    public Guardian(int reflejos, String nombre, int año, String casa, int num_uniforme) {
+    public Guardian(int reflejos, int agilidad, String nombre, int año, String casa, int num_uniforme) {
         super(nombre, año, casa, num_uniforme);
         this.reflejos = reflejos;
+        this.agilidad = agilidad;
     }
     
     public int getReflejos() {

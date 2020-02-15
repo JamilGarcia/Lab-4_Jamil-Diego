@@ -98,11 +98,17 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", a\u00f1o=" + año + ", casa=" + casa + ", num_uniforme=" + num_uniforme + ", guar=" + guar + ", golp=" + golp + ", caza=" + caza + ", busc=" + busc + '}';
+        return "Jugador: " + 
+                "Nombre: " + nombre + "\n" +
+                "A\u00f1o: " + año + "\n" +
+                "Casa: " + casa + "\n" +
+                "Uniforme: " + num_uniforme + "\n" + 
+                "Guardian: " + guar + "\n" +
+                "Golpeador: " + golp + "\n" +
+                "Caza: " + caza + "\n" +
+                "Buscador: " + busc + "\n" +
+                "\n";
     }
-    
-    
-    
 
     
     public boolean trampa(){

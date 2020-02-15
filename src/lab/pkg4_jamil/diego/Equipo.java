@@ -97,7 +97,9 @@ public class Equipo {
                 "| Agilidad: " + agilidad + "\n" +
                 "| Velocidad:" + velocidad + "\n" + 
                 "| Fuerza: " + fuerza + "\n" +
-                "| Jugadores: " + jugadores + "\n";
+                "| Jugadores: " + "\n" +
+                "__________________________________" + "\n" +
+                jugadores + "\n";
     }
     
     

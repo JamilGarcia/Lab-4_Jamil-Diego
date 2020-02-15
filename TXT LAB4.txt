@@ -1,0 +1,5 @@
+Casas Aceptadas: 
+	- Gryffindor
+	- Slytherin
+	- Ravenclaw
+	- Hufflepuff
