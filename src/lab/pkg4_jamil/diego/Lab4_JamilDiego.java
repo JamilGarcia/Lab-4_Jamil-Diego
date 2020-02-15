@@ -161,13 +161,13 @@ public class Lab4_JamilDiego {
                     switch (opcion2) {
                         case 1: //Agregar Jugador
                             System.out.println(""
-                                    + "Ingrese El tipo de jugador: "
-                                    + "___________________________"
-                                    + " 1. Guardian"
-                                    + " 2. Cazador"
-                                    + " 3. Buscador"
-                                    + " 4. Golpeador "
-                                    + "___________________________");
+                                    + "Ingrese El tipo de jugador:\n "
+                                    + "___________________________\n"
+                                    + " 1. Guardian\n"
+                                    + " 2. Cazador\n"
+                                    + " 3. Buscador\n"
+                                    + " 4. Golpeador\n "
+                                    + "___________________________\n");
                             int pos = jd.nextInt();
                             switch (pos) {
                                 case 1:
@@ -372,12 +372,12 @@ public class Lab4_JamilDiego {
                             int jugad = jd.nextInt();
 
                             System.out.println(""
-                                    + "Modificar:"
-                                    + "______________________________"
-                                    + "1. Nombre"
-                                    + "2. Años"
-                                    + "3. Casa"
-                                    + "4. Numero De Uniforme");
+                                    + "Modificar: \n"
+                                    + "______________________________\n"
+                                    + "1. Nombre\n"
+                                    + "2. Años\n"
+                                    + "3. Casa\n"
+                                    + "4. Numero De Uniforme\n");
                             int opcion13 = jd.nextInt();
                             switch (opcion13) {
                                 case 1:
