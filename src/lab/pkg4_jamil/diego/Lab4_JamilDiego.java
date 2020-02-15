@@ -15,29 +15,27 @@ public class Lab4_JamilDiego {
 
         ArrayList<Jugador> jug = new ArrayList();
         ArrayList<Equipo> equip = new ArrayList();
-        
-        equip.add(new Equipo ("Gryffindor", 12, 16, 0, 0, 0));
-        jug.add(new Jugador ("Yuda", 5, "Gryffindor", 7));
-        jug.add(new Jugador ("Camilo", 4, "Gryffindor", 3));
-        jug.add(new Jugador ("Bendeck", 4, "Gryffindor", 2));
-        jug.add(new Jugador ("Vargas", 1, "Gryffindor", 11));
-        jug.add(new Jugador ("Sebas", 7, "Gryffindor", 19));
-        jug.add(new Jugador ("Paulina", 7, "Gryffindor", 93));
-        jug.add(new Jugador ("Diego", 5, "Gryffindor", 8));
+
+        equip.add(new Equipo("Gryffindor", 12, 16, 0, 0, 0));
+        jug.add(new Jugador("Yuda", 5, "Gryffindor", 7));
+        jug.add(new Jugador("Camilo", 4, "Gryffindor", 3));
+        jug.add(new Jugador("Bendeck", 4, "Gryffindor", 2));
+        jug.add(new Jugador("Vargas", 1, "Gryffindor", 11));
+        jug.add(new Jugador("Sebas", 7, "Gryffindor", 19));
+        jug.add(new Jugador("Paulina", 7, "Gryffindor", 93));
+        jug.add(new Jugador("Diego", 5, "Gryffindor", 8));
         ((Equipo) equip.get(0)).setJugadores(jug);
-        
-        equip.add(new Equipo ("Slytherin", 10, 20, 0, 0, 0));
-        jug.add(new Jugador ("Jamil", 5, "Slytherin", 4));
-        jug.add(new Jugador ("Marcela", 3, "Slytherin", 10));
-        jug.add(new Jugador ("Reyes", 3, "Slytherin", 9));
-        jug.add(new Jugador ("Fortin", 2, "Slytherin", 15));
-        jug.add(new Jugador ("James",6, "Slytherin", 16));
-        jug.add(new Jugador ("Gabriel",6, "Slytherin", 13));
-        jug.add(new Jugador ("Andrea",4, "Slytherin", 77));
+
+        equip.add(new Equipo("Slytherin", 10, 20, 0, 0, 0));
+        jug.add(new Jugador("Jamil", 5, "Slytherin", 4));
+        jug.add(new Jugador("Marcela", 3, "Slytherin", 10));
+        jug.add(new Jugador("Reyes", 3, "Slytherin", 9));
+        jug.add(new Jugador("Fortin", 2, "Slytherin", 15));
+        jug.add(new Jugador("James", 6, "Slytherin", 16));
+        jug.add(new Jugador("Gabriel", 6, "Slytherin", 13));
+        jug.add(new Jugador("Andrea", 4, "Slytherin", 77));
         ((Equipo) equip.get(1)).setJugadores(jug);
-        
-                
-        
+
         while (resp == 's') {
 
             System.out.println(""
@@ -488,37 +486,27 @@ public class Lab4_JamilDiego {
                     break;
 
                 case 3: //Simulacion
-                   
+
                     boolean fin = true;
                     for (int i = 0; i < equip.size(); i++) {
                         System.out.println(equip.get(i));
                     }
-                    
+
                     System.out.println("Con que equipo deseas jugar?");
                     int e = jd.nextInt();
                     System.out.println("Elige el equipo contrario:");
                     int cont = jd.nextInt();
-                     try {
-                        validarequipo(equip.get(e).getJugadores());
-                    } catch (Excpet2 ep) {
-                         System.out.println("Equipo no completo jugador 1");
-                    }
-                      try {
-                        validarequipo(equip.get(cont).getJugadores());
-                    } catch (Excpet2 ep) {
-                         System.out.println("Equipo no completo en la maquina");
-                    }
                     while (fin) {
                         for (int i = 0; i < jug.size(); i++) {
                             System.out.println(jug.get(i));
                         }
                         System.out.println("Es tu turno jugador 1 con que jugador desea jugar:");
-                        int juga = jd.nextInt();
                         System.out.println("1) Guardian");
                         System.out.println("2) Cazador");
                         System.out.println("3) Buscador");
                         System.out.println("4) Golpeador");
                         System.out.println("5) Salir");
+                        int juga = jd.nextInt();
                         switch (juga) {
                             case 1:
                                 int ag = 0;
@@ -536,12 +524,15 @@ public class Lab4_JamilDiego {
                                 if (ag > vel) {
                                     for (Jugador j : equip.get(e).getJugadores()) {
                                         if (j instanceof Guardian) {
+                                            System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "salvo la pelota de entrar");
                                             ((Guardian) j).setAgilidad(ag + 8);
 
-                                            System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "salvo la pelota de entrar");
-                                        } else {
-                                            System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "fallo al tratar de slavar la pelota");
                                         }
+
+                                    }
+                                } else {
+                                    for (Jugador j : equip.get(e).getJugadores()) {
+                                        System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "fallo al tratar de slavar la pelota");
 
                                     }
                                 }
@@ -568,9 +559,13 @@ public class Lab4_JamilDiego {
                                             ((Cazador) j).setVelocidad(vel2 + 6);
                                             ((Cazador) j).setAgilida(vel2 + 6);
                                             System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(e).getCasa() + "anoto un gol");
-                                        } else {
-                                            System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(e).getCasa() + "fallo al intentar anotar un gol");
                                         }
+                                    }
+                                } else {
+                                    for (Jugador j : equip.get(e).getJugadores()) {
+
+                                        System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(e).getCasa() + "fallo al intentar anotar un gol");
+
                                     }
                                 }
                                 break;
@@ -598,16 +593,18 @@ public class Lab4_JamilDiego {
                                             if (ra > 18) {
                                                 System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "atrapo la snitch");
                                             }
-                                        } else {
-                                            System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "no subio un punto a su velocidad");
                                         }
+                                    }
+                                } else {
+                                    for (Jugador j : equip.get(e).getJugadores()) {
+                                        System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "no subio un punto a su velocidad");
+
                                     }
                                 }
                                 if (ra > 18) {
                                     fin = false;
                                 }
                                 break;
-
                             case 4:
                                 int fuer = 0;
                                 int fuer2 = 0;
@@ -632,11 +629,14 @@ public class Lab4_JamilDiego {
                                                 if (j instanceof Golpeador) {
                                                     ((Golpeador) j).setFuerz(fuer + 10);
                                                     System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "logro atacar");
-                                                } else {
-                                                    System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro atacar");
                                                 }
                                             }
+                                        } else {
+                                            for (Jugador j : equip.get(e).getJugadores()) {
+                                                System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro atacar");
+                                            }
                                         }
+
                                         break;
                                     case 2:
                                         int agil = 0;
@@ -655,10 +655,13 @@ public class Lab4_JamilDiego {
                                             for (Jugador j : equip.get(e).getJugadores()) {
                                                 if (j instanceof Golpeador) {
                                                     ((Golpeador) j).setAgilida(agil + 10);
+                                                    System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "logro defender");
                                                 }
                                             }
-                                            break;
-
+                                        } else {
+                                            for (Jugador j : equip.get(e).getJugadores()) {
+                                                System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro defender");
+                                            }
                                         }
                                         break;
                                 }
@@ -683,9 +686,12 @@ public class Lab4_JamilDiego {
                                                     ((Guardian) j).setAgilidad(a + 8);
 
                                                     System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "salvo la pelota de entrar");
-                                                } else {
-                                                    System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(e).getCasa() + "fallo al tratar de slavar la pelota");
                                                 }
+
+                                            }
+                                        } else {
+                                            for (Jugador j : equip.get(cont).getJugadores()) {
+                                                System.out.println(j.getNombre() + "-Guardian de la casa" + equip.get(cont).getCasa() + "fallo al tratar de slavar la pelota");
 
                                             }
                                         }
@@ -712,9 +718,13 @@ public class Lab4_JamilDiego {
                                                     ((Cazador) j).setVelocidad(v2 + 6);
                                                     ((Cazador) j).setAgilida(a2 + 6);
                                                     System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(e).getCasa() + "anoto un gol");
-                                                } else {
-                                                    System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(e).getCasa() + "fallo al intentar anotar un gol");
                                                 }
+                                            }
+                                        } else {
+                                            for (Jugador j : equip.get(cont).getJugadores()) {
+
+                                                System.out.println(j.getNombre() + "-Cazador de la casa" + equip.get(cont).getCasa() + "fallo al intentar anotar un gol");
+
                                             }
                                         }
                                         break;
@@ -736,23 +746,27 @@ public class Lab4_JamilDiego {
                                         if (v3 > v4) {
                                             for (Jugador j : equip.get(cont).getJugadores()) {
                                                 if (j instanceof Buscador) {
-                                                    ag3 = ((Buscador) j).getVelocidad();
-                                                    ((Buscador) j).setAgilida(ag3 + 1);
+                                                    a3 = ((Buscador) j).getVelocidad();
+                                                    ((Buscador) j).setAgilida(a3 + 1);
                                                     System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "subio un punto en velocidad");
                                                     if (r > 18) {
                                                         System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "atrapo la snitch");
                                                     }
-                                                } else {
-                                                    System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(e).getCasa() + "no subio un punto a su velocidad");
                                                 }
                                             }
-                                        }
-                                        if (r > 18) {
-                                            fin = false;
-                                        }
-                                        break;
+                                        } else {
+                                            for (Jugador j : equip.get(cont).getJugadores()) {
+                                                System.out.println(j.getNombre() + "-Buscador de la casa" + equip.get(cont).getCasa() + "no subio un punto a su velocidad");
 
-                                    case 4:
+                                            }
+                                        }
+                                            if (r > 18) {
+                                                fin = false;
+                                            }
+                                            break;
+
+                                        
+                                        case 4:
                                         int f = 0;
                                         int f2 = 0;
                                         int n = 1 + ran.nextInt(2);
@@ -768,16 +782,19 @@ public class Lab4_JamilDiego {
                                                         f2 = ((Golpeador) j).getFuerz();
                                                     }
                                                 }
-                                                if ((fuer * 2) + 1 > fuer2 + fuer2) {
+                                                if ((f * 2) + 1 > f2 + f2) {
                                                     for (Jugador j : equip.get(cont).getJugadores()) {
                                                         if (j instanceof Golpeador) {
                                                             ((Golpeador) j).setFuerz(f + 10);
                                                             System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "logro atacar");
-                                                        } else {
-                                                            System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro atacar");
-                                                        }
+                                                        } 
                                                     }
                                                 }
+                                                else {
+                                            for (Jugador j : equip.get(e).getJugadores()) {
+                                                System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro atacar");
+                                            }
+                                        }
                                                 break;
                                             case 2:
                                                 int agi = 0;
@@ -798,9 +815,11 @@ public class Lab4_JamilDiego {
                                                             ((Golpeador) j).setAgilida(agi + 10);
                                                         }
                                                     }
-                                                    break;
-
                                                 }
+                                                 else {
+                                            for (Jugador j : equip.get(e).getJugadores()) {
+                                                System.out.println(j.getNombre() + "-Golpeador de la casa" + equip.get(e).getCasa() + "no logro defender");
+                                            }
                                                 break;
                                         }
                                     case 5:
@@ -810,29 +829,33 @@ public class Lab4_JamilDiego {
                                 }
 
                                 break;
-                            case 0: //Salida
-                                System.out.println("Gracias por utilizar el programa <3");
-                                System.exit(0);
-                                break;
-                            default: //Validacion
-                                System.out.println("Error!! Opcion Incorrecta!!!");
-                        }
+                                    case 0: //Salida
+                                        System.out.println("Gracias por utilizar el programa <3");
+                                        System.exit(0);
+                                        break;
+                                    default: //Validacion
+                                        System.out.println("Error!! Opcion Incorrecta!!!");
+                                }
 
+                        }
                     }
             }
         }
     }
 
+    
+
     public static void validarCasa(String Casa) throws Exception1 {
         if (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
             throw new Exception1();
-            
+
         }
     }
-    public static void validarequipo(ArrayList e) throws Excpet2{
-    if(e.size()>=8){
-       throw new Excpet2(); 
-       }
+
+    public static void validarequipo(ArrayList e) throws Excpet2 {
+        if (e.size() >= 8) {
+            throw new Excpet2();
         }
+    }
 
 }

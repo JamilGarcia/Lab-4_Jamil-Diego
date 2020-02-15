@@ -29,6 +29,10 @@ public class Excpet2 extends Exception{
     public String toString() {
         return "Excpet2{" + "e=" + e + '}';
     }
+
+    void setStackTrace() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
