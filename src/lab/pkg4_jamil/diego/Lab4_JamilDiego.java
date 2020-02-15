@@ -49,7 +49,17 @@ public class Lab4_JamilDiego {
                         case 1: //Agregar Equipo
 
                             System.out.println("Ingrese la casa del equipo: ");
-                            String casa = jd.next();
+                            String Casa = jd.next();
+                            
+                            while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
+                                        //Try Catch
+                                        try {
+                                            validarCasa(Casa);
+                                        } catch (Exception1 e) {
+                                            System.out.println("Casa no valida");
+                                            Casa = jd.next();
+                                        }
+                                    }
 
                             System.out.println("Ingrese los partidos perdidos: ");
                             int parPer = jd.nextInt();
@@ -61,9 +71,9 @@ public class Lab4_JamilDiego {
                             double Vel = 0;
                             double Fuer = 0;
 
-                            Equipo eq = new Equipo(casa, parPer, parGan, agil, Vel, Fuer);
+                            Equipo eq = new Equipo(Casa, parPer, parGan, agil, Vel, Fuer);
 
-                            equip.add(new Equipo(casa, parPer, parGan, agil, Vel, Fuer));
+                            equip.add(new Equipo(Casa, parPer, parGan, agil, Vel, Fuer));
 
                             break;
                         case 2: //Modificar Equipo
@@ -88,9 +98,19 @@ public class Lab4_JamilDiego {
                             switch (opcion12) {
                                 case 1:
                                     System.out.println("Ingrese la casa: ");
-                                    casa = jd.next();
+                                    Casa = jd.next();
 
-                                    ((Equipo) equip.get(setEquip)).setCasa(casa);
+                                    while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
+                                        //Try Catch
+                                        try {
+                                            validarCasa(Casa);
+                                        } catch (Exception1 e) {
+                                            System.out.println("Casa no valida");
+                                            Casa = jd.next();
+                                        }
+                                    }
+                                    
+                                    ((Equipo) equip.get(setEquip)).setCasa(Casa);
 
                                     break;
                                 case 2:
@@ -132,6 +152,7 @@ public class Lab4_JamilDiego {
                             + "| 1. AGREGAR JUGADOR  |\n"
                             + "| 2. MODIFICAR JUGADOR|\n"
                             + "| 3. LISTAR JUGADORES |\n"
+                            + "| 4. ELIMINAR JUGADOR |\n"
                             + "|_____________________|\n"
                             + "\n"
                             + "Ingrese una opcion: ");
@@ -162,7 +183,12 @@ public class Lab4_JamilDiego {
 
                                     while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
                                         //Try Catch
-
+                                        try {
+                                            validarCasa(Casa);
+                                        } catch (Exception1 e) {
+                                            System.out.println("Casa no valida");
+                                            Casa = jd.next();
+                                        }
                                     }
 
                                     int c = 0;
@@ -185,8 +211,8 @@ public class Lab4_JamilDiego {
                                     jug.add(new Guardian(reflex, nom, anios, Casa, n_uniforme));
                                     ((Equipo) equip.get(c)).setJugadores(jug);
                                     break;
-                                    
-                                case 2: 
+
+                                case 2:
                                     System.out.println("Nombre:");
                                     nom = jd.nextLine();
                                     nom = jd.nextLine();
@@ -199,7 +225,12 @@ public class Lab4_JamilDiego {
 
                                     while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
                                         //Try Catch
-
+                                        try {
+                                            validarCasa(Casa);
+                                        } catch (Exception1 e) {
+                                            System.out.println("Casa no valida");
+                                            Casa = jd.next();
+                                        }
                                     }
 
                                     c = 0;
@@ -215,21 +246,21 @@ public class Lab4_JamilDiego {
 
                                     System.out.println("Numero de uniforme: ");
                                     n_uniforme = jd.nextInt();
-                                    
+
                                     System.out.println("Reflejos: ");
                                     reflex = jd.nextInt();
-                                    
+
                                     System.out.println("Peso: ");
                                     int peso = jd.nextInt();
-                                    
+
                                     System.out.println("Musculatura: ");
                                     int musc = jd.nextInt();
 
                                     jug.add(new Cazador(peso, musc, reflex, nom, anios, Casa, n_uniforme));
                                     ((Equipo) equip.get(c)).setJugadores(jug);
-                                    
+
                                     break;
-                                 
+
                                 case 3:
                                     System.out.println("Nombre:");
                                     nom = jd.nextLine();
@@ -243,7 +274,12 @@ public class Lab4_JamilDiego {
 
                                     while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
                                         //Try Catch
-
+                                        try {
+                                            validarCasa(Casa);
+                                        } catch (Exception1 e) {
+                                            System.out.println("Casa no valida");
+                                            Casa = jd.next();
+                                        }
                                     }
 
                                     c = 0;
@@ -259,21 +295,21 @@ public class Lab4_JamilDiego {
 
                                     System.out.println("Numero de uniforme: ");
                                     n_uniforme = jd.nextInt();
-                                    
+
                                     System.out.println("Reflejos: ");
                                     reflex = jd.nextInt();
-                                    
+
                                     System.out.println("Peso: ");
                                     peso = jd.nextInt();
-                                    
+
                                     System.out.println("Musculatura: ");
                                     musc = jd.nextInt();
 
                                     jug.add(new Buscador(peso, musc, reflex, nom, anios, Casa, n_uniforme));
                                     ((Equipo) equip.get(c)).setJugadores(jug);
-                                    
-                                    break; 
-                                case 4: 
+
+                                    break;
+                                case 4:
                                     System.out.println("Nombre:");
                                     nom = jd.nextLine();
                                     nom = jd.nextLine();
@@ -286,7 +322,12 @@ public class Lab4_JamilDiego {
 
                                     while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
                                         //Try Catch
-
+                                        try {
+                                            validarCasa(Casa);
+                                        } catch (Exception1 e) {
+                                            System.out.println("Casa no valida");
+                                            Casa = jd.next();
+                                        }
                                     }
 
                                     c = 0;
@@ -302,13 +343,13 @@ public class Lab4_JamilDiego {
 
                                     System.out.println("Numero de uniforme: ");
                                     n_uniforme = jd.nextInt();
-                                    
+
                                     System.out.println("Reflejos: ");
                                     reflex = jd.nextInt();
-                                    
+
                                     System.out.println("Peso: ");
                                     peso = jd.nextInt();
-                                    
+
                                     System.out.println("Musculatura: ");
                                     musc = jd.nextInt();
 
@@ -316,14 +357,106 @@ public class Lab4_JamilDiego {
                                     ((Equipo) equip.get(c)).setJugadores(jug);
                                     break;
                                 default:
-                                    throw new AssertionError();
+                                    System.out.println("Error!!! Opcion Incorrecta!!!");
                             }
 
                             break;
                         case 2: //Modificar Jugador
-                            
+                            for (int i = 0; i < jug.size(); i++) {
+                                System.out.println(i + ". " + equip.get(i));
+                            }
+                            System.out.println("Ingrese el equipo a modificar: ");
+                            int p = jd.nextInt();
+
+                            System.out.println("Ingrese el jugador a modificar: ");
+                            int jugad = jd.nextInt();
+
+                            System.out.println(""
+                                    + "Modificar:"
+                                    + "______________________________"
+                                    + "1. Nombre"
+                                    + "2. Años"
+                                    + "3. Casa"
+                                    + "4. Numero De Uniforme");
+                            int opcion13 = jd.nextInt();
+                            switch (opcion13) {
+                                case 1:
+                                    System.out.println("Nombre: ");
+                                    String nom = jd.nextLine();
+                                    nom = jd.nextLine();
+
+                                    jug.get(jugad).setNombre(nom);
+                                    ((Equipo) equip.get(p)).setJugadores(jug);
+
+                                    break;
+                                case 2:
+                                    System.out.println("Años");
+                                    int anios = jd.nextInt();
+
+                                    jug.get(jugad).setAño(anios);
+                                    ((Equipo) equip.get(p)).setJugadores(jug);
+
+                                    break;
+                                case 3:
+                                    System.out.println("Casa: ");
+                                    String Casa = jd.next();
+
+                                    while (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")) {
+                                        //Try Catch
+                                        try {
+                                            validarCasa(Casa);
+                                        } catch (Exception1 e) {
+                                            System.out.println("Casa no valida");
+                                            Casa = jd.next();
+                                        }
+                                    }
+
+                                    int c = 0;
+                                    if (Casa.equals("Gryffindor")) {
+                                        c = 0;
+                                    } else if (Casa.equals("Slytherin")) {
+                                        c = 1;
+                                    } else if (Casa.equals("Ravenclaw")) {
+                                        c = 2;
+                                    } else if (Casa.equals("Hufflepuff")) {
+                                        c = 3;
+                                    }
+
+                                    jug.get(jugad).setCasa(Casa);
+                                    ((Equipo) equip.get(p)).setJugadores(jug);
+
+                                    break;
+                                case 4:
+                                    System.out.println("Numero De Uniforme: ");
+                                    int n_uniforme = jd.nextInt();
+
+                                    jug.get(jugad).setNum_uniforme(n_uniforme);
+                                    ((Equipo) equip.get(p)).setJugadores(jug);
+
+                                    break;
+                                default:
+                                    System.out.println("Error!!! Opcion Incorrecto!!!");
+                            }
                             break;
                         case 3: //Listar Jugadores
+                            for (int i = 0; i < jug.size(); i++) {
+                                System.out.println(i + ". " + equip.get(i));
+                            }
+
+                            break;
+
+                        case 4:
+                            for (int i = 0; i < jug.size(); i++) {
+                                System.out.println(i + ". " + equip.get(i));
+                            }
+                            System.out.println("Ingrese el equipo: ");
+                            int f = jd.nextInt();
+
+                            System.out.println("Ingrese el jugador a eliminar");
+                            int elim = jd.nextInt();
+
+                            jug.remove(elim);
+                            ((Equipo) equip.get(f)).setJugadores(jug);
 
                             break;
                         default:
@@ -351,41 +484,37 @@ public class Lab4_JamilDiego {
                         System.out.println("2) Cazador");
                         System.out.println("3) Buscador");
                         System.out.println("4) Golpeador");
-                        switch(juga){
+                        switch (juga) {
                             case 1:
-                                int ag=0;
-                                int vel=0;
+                                int ag = 0;
+                                int vel = 0;
                                 for (Jugador j : equip.get(e).getJugadores()) {
-                                    if(j instanceof Guardian){
-                                    ag=j.agilidad();
+                                    if (j instanceof Guardian) {
+                                        ag = j.agilidad();
                                     }
                                 }
                                 for (Jugador j : equip.get(cont).getJugadores()) {
-                                    if(j instanceof Cazador){
-                                    vel=j.velocidadinicial();
+                                    if (j instanceof Cazador) {
+                                        vel = j.velocidadinicial();
                                     }
                                 }
-                                if(ag>vel){
+                                if (ag > vel) {
                                     for (Jugador j : equip.get(e).getJugadores()) {
-                                    if(j instanceof Guardian){
-                                    ((Guardian) j).setAgilidad(ag+8);
+                                        if (j instanceof Guardian) {
+                                            ((Guardian) j).setAgilidad(ag + 8);
+                                        }
                                     }
-                                }
                                     System.out.println(equip);
                                 }
-                                
-                                break;
-                             
-=======
 
                                 break;
+
                             case 2:
                                 break;
                             case 3:
                                 break;
                             case 4:
                                 break;
->>>>>>> ed9820ae319bc95dff2f95c782705f9e0cdd76d5
                         }
                     }
 
@@ -401,6 +530,13 @@ public class Lab4_JamilDiego {
 
         }
 
+    }
+    
+    public static void validarCasa(String Casa) throws Exception1{
+        if (!Casa.equals("Gryffindor") || !Casa.equals("Slytherin") || !Casa.equals("Ravenclaw") || !Casa.equals("Hufflepuff")){
+            throw new Exception1();
+            
+        }
     }
 
 }
