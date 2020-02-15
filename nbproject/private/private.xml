@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/garci/Documents/NetBeansProjects/Lab%234_Jamil&amp;Diego/src/lab/pkg4_jamil/diego/Cazador.java</file>
             <file>file:/C:/Users/garci/Documents/NetBeansProjects/Lab%234_Jamil&amp;Diego/src/lab/pkg4_jamil/diego/Buscador.java</file>
             <file>file:/C:/Users/garci/Documents/NetBeansProjects/Lab%234_Jamil&amp;Diego/src/lab/pkg4_jamil/diego/Golpeador.java</file>
@@ -11,6 +12,17 @@
             <file>file:/C:/Users/garci/Documents/NetBeansProjects/Lab%234_Jamil&amp;Diego/src/lab/pkg4_jamil/diego/Lab4_JamilDiego.java</file>
             <file>file:/C:/Users/garci/Documents/NetBeansProjects/Lab%234_Jamil&amp;Diego/src/lab/pkg4_jamil/diego/Guardian.java</file>
             <file>file:/C:/Users/garci/Documents/NetBeansProjects/Lab%234_Jamil&amp;Diego/src/lab/pkg4_jamil/diego/Equipo.java</file>
+=======
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Guardian.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Jugador.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Excpet2.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Cazador.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Buscador.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Lab4_JamilDiego.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Exception1.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Golpeador.java</file>
+            <file>file:/C:/Users/diego/Desktop/Lab-4_Jamil-Diego/src/lab/pkg4_jamil/diego/Equipo.java</file>
+>>>>>>> 7e85b979ae8b01d4d9d8e0bf736a590fb455c8d4
         </group>
     </open-files>
 </project-private>
